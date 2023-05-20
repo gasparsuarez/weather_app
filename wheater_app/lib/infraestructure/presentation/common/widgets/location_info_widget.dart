@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wheater_app/infraestructure/presentation/common/config/theme/app_theme.dart';
+import 'package:wheater_app/infraestructure/presentation/common/utils/styles.dart';
 
 import '../../../../application/blocs/weather_bloc/weather_bloc.dart';
 
@@ -9,19 +9,12 @@ class LocationInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final boxDecoration = BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        gradient: const LinearGradient(
-            colors: [gFirstColor, gSecondColor, gThirdColor],
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft));
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Container(
         width: 220,
         height: 70,
-        decoration: boxDecoration,
+        decoration: boxContentDecoration,
         child: BlocBuilder<WeatherBloc, WeatherState>(
           builder: (context, state) {
             if (state is LoadingWeatherState) {

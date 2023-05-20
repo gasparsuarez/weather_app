@@ -12,7 +12,9 @@ class WeatherApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => Injector.appInstance.get<WeatherBloc>()),
+        BlocProvider(
+            create: (_) => Injector.appInstance.get<WeatherBloc>()
+              ..add(LoadWeatherEvent(locationName: 'Argentina'))),
       ],
       child: MaterialApp.router(
         routerConfig: routes,

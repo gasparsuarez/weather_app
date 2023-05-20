@@ -24,4 +24,5 @@ flutter:
   uses-material-design: true
   assets:
     - .env
-    - assets/weather/
+    - assets/weather/day/
+    - assets/weather/night/

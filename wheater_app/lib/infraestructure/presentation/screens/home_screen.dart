@@ -1,10 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wheater_app/infraestructure/presentation/common/widgets/widgets.dart';
-
-import '../../../application/blocs/weather_bloc/weather_bloc.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,6 +15,8 @@ class HomeScreen extends StatelessWidget {
 class _HomeView extends StatelessWidget {
   const _HomeView();
 
+// TODO: Continuar con el current weather.
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -30,6 +27,7 @@ class _HomeView extends StatelessWidget {
         SizedBox(height: 10),
         LocationInfoWidget(),
         SizedBox(height: 20),
+        CurrentWeather(),
       ],
     );
   }
