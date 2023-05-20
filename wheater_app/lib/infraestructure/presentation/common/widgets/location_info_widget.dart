@@ -9,10 +9,11 @@ class LocationInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Container(
-        width: 220,
+        width: size.width * 0.9,
         height: 70,
         decoration: boxContentDecoration,
         child: BlocBuilder<WeatherBloc, WeatherState>(

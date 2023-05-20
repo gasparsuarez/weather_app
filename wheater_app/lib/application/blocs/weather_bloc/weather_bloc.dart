@@ -16,7 +16,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
             await iWeatherRepository.getCurrentWeather(event.locationName);
         emit(LoadedWeatherState(weatherEntity: weatherEntity));
       } catch (e) {
-        emit(ErrorWeatherState(e.toString()));
+        emit(ErrorWeatherState('Datos inválidos'));
       }
     });
   }

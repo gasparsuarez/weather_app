@@ -6,7 +6,7 @@ const gThirdColor = Color(0xff2C5364);
 
 class AppTheme {
   getTheme() => ThemeData(
-        useMaterial3: false,
+        useMaterial3: true,
         colorSchemeSeed: Colors.grey,
       );
 }

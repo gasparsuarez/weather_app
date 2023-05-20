@@ -15,8 +15,6 @@ class HomeScreen extends StatelessWidget {
 class _HomeView extends StatelessWidget {
   const _HomeView();
 
-// TODO: Continuar con el current weather.
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,10 +22,11 @@ class _HomeView extends StatelessWidget {
         CustomAppbar(),
         SizedBox(height: 20),
         SearchField(),
-        SizedBox(height: 10),
+        SizedBox(height: 20),
         LocationInfoWidget(),
         SizedBox(height: 20),
         CurrentWeather(),
+        SizedBox(height: 20),
       ],
     );
   }

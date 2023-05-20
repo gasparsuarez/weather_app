@@ -15,18 +15,20 @@ class SearchField extends StatelessWidget {
       child: BlocBuilder<WeatherBloc, WeatherState>(
         builder: (context, state) {
           return TextFormField(
-            autocorrect: false,
-            onFieldSubmitted: (value) {
-              if (value.isEmpty) return;
-              context.read<WeatherBloc>().add(LoadWeatherEvent(locationName: value));
-            },
-            decoration: InputDecoration(
+              autocorrect: false,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              validator: (_) => (state is ErrorWeatherState) ? state.error : null,
+              onFieldSubmitted: (value) {
+                if (value.isEmpty) return;
+                context.read<WeatherBloc>().add(LoadWeatherEvent(locationName: value));
+              },
+              decoration: InputDecoration(
                 filled: true,
                 hintText: 'Introduce una localidad..',
                 fillColor: Theme.of(context).inputDecorationTheme.fillColor,
                 border: UnderlineInputBorder(borderRadius: BorderRadius.circular(20)),
-                prefixIcon: const Icon(Icons.search)),
-          );
+                prefixIcon: const Icon(Icons.search),
+              ));
         },
       ),
     );

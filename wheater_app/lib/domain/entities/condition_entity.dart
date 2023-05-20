@@ -1,6 +1,7 @@
 class ConditionEntity {
   final String text;
   final int iconCode;
+  final bool isDay;
 
-  ConditionEntity({required this.text, required this.iconCode});
+  ConditionEntity({this.isDay = false, required this.text, required this.iconCode});
 }
