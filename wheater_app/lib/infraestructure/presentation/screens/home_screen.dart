@@ -19,9 +19,7 @@ class _HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: const [
-        CustomAppbar(),
-        SizedBox(height: 20),
-        SearchField(),
+        CustomAppBar(),
         SizedBox(height: 20),
         LocationInfoWidget(),
         SizedBox(height: 20),

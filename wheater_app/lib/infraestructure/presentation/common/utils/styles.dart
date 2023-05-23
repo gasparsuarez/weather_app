@@ -5,5 +5,5 @@ final boxContentDecoration = BoxDecoration(
     borderRadius: BorderRadius.circular(20),
     gradient: const LinearGradient(
         colors: [gFirstColor, gSecondColor, gThirdColor],
-        begin: Alignment.topRight,
-        end: Alignment.bottomLeft));
+        begin: Alignment.centerRight,
+        end: Alignment.centerLeft));

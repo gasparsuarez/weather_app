@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:wheater_app/domain/entities/weather_entity.dart';
+import 'package:wheater_app/domain/entities/forecast_entity.dart';
 import 'package:wheater_app/domain/repositories/weather_repository.dart';
 
 part 'weather_event.dart';
@@ -12,11 +12,10 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     on<LoadWeatherEvent>((event, emit) async {
       try {
         emit(LoadingWeatherState());
-        WeatherEntity weatherEntity =
-            await iWeatherRepository.getCurrentWeather(event.locationName);
-        emit(LoadedWeatherState(weatherEntity: weatherEntity));
+        final forecastEntity = await iWeatherRepository.getCurrentForecast(event.locationName);
+        emit(LoadedWeatherState(forecastEntity: forecastEntity));
       } catch (e) {
-        emit(ErrorWeatherState('Datos inválidos'));
+        emit(ErrorWeatherState('Ingrese una ubicación válida.'));
       }
     });
   }

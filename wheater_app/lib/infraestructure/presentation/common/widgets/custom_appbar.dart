@@ -1,26 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:wheater_app/infraestructure/presentation/common/config/theme/app_theme.dart';
+import 'package:wheater_app/infraestructure/presentation/common/widgets/widgets.dart';
 
-class CustomAppbar extends StatelessWidget {
-  const CustomAppbar({super.key});
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    const boxDecoration = BoxDecoration(
+        gradient: LinearGradient(
+            colors: [gFirstColor, gSecondColor, gThirdColor],
+            begin: Alignment.centerRight,
+            end: Alignment.centerLeft),
+        borderRadius:
+            BorderRadius.only(bottomRight: Radius.circular(25), bottomLeft: Radius.circular(25)));
+
+    return Container(
+      width: double.infinity,
+      height: 200,
+      decoration: boxDecoration,
+      child: SafeArea(
         bottom: false,
-        child: SizedBox(
-          width: double.infinity,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: Row(
+        child: Column(
+          children: [
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Text(
                   'Weather App',
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                )
               ],
             ),
-          ),
-        ));
+            const Spacer(),
+            const SearchField(),
+          ],
+        ),
+      ),
+    );
   }
 }

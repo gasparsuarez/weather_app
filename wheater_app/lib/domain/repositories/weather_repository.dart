@@ -1,5 +1,5 @@
-import 'package:wheater_app/domain/entities/weather_entity.dart';
+import 'package:wheater_app/domain/entities/forecast_entity.dart';
 
 abstract class IWeatherRepository {
-  Future<WeatherEntity> getCurrentWeather(String name);
+  Future<ForecastEntity> getCurrentForecast(String name);
 }
