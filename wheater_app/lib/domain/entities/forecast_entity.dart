@@ -1,9 +1,11 @@
-class ForecastEntity {
+import 'package:equatable/equatable.dart';
+
+class ForecastEntity extends Equatable {
   final Location location;
   final Current current;
   final Forecast forecast;
 
-  ForecastEntity({
+  const ForecastEntity({
     required this.location,
     required this.current,
     required this.forecast,
@@ -20,6 +22,10 @@ class ForecastEntity {
         "current": current.toJson(),
         "forecast": forecast.toJson(),
       };
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [location, current, forecast];
 }
 
 class Current {

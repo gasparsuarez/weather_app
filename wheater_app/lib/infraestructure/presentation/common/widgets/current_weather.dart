@@ -30,7 +30,6 @@ class CurrentWeather extends StatelessWidget {
           height: size.height * 0.20,
           decoration: boxContentDecoration,
           child: BlocBuilder<WeatherBloc, WeatherState>(
-            buildWhen: (previous, current) => previous != current,
             builder: (context, state) {
               if (state is LoadingWeatherState) {
                 return Center(child: _circleProgressIndicator());

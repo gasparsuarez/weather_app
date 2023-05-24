@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../config/theme/app_theme.dart';
+import '../../../../config/theme/app_theme.dart';
 
 final boxContentDecoration = BoxDecoration(
     borderRadius: BorderRadius.circular(20),

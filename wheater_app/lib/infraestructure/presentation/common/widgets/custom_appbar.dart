@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wheater_app/infraestructure/presentation/common/config/theme/app_theme.dart';
+import 'package:wheater_app/config/theme/app_theme.dart';
 import 'package:wheater_app/infraestructure/presentation/common/widgets/widgets.dart';
 
 class CustomAppBar extends StatelessWidget {

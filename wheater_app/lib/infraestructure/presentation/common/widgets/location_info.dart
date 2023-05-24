@@ -18,17 +18,16 @@ class LocationInfoWidget extends StatelessWidget {
         decoration: boxContentDecoration,
         child: BlocBuilder<WeatherBloc, WeatherState>(
           builder: (context, state) {
-            if (state is LoadingWeatherState) {
-              return _circleProgressIndicator();
-            } else if (state is LoadedWeatherState) {
+            if (state is LoadedWeatherState) {
+              final forecastLocation = state.forecastEntity.location;
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(state.forecastEntity.location.name,
+                  Text(forecastLocation.name,
                       style: const TextStyle(color: Colors.white, fontSize: 20)),
                   const SizedBox(width: 10),
                   Text(
-                    '${state.forecastEntity.location.region}, ${state.forecastEntity.location.country}',
+                    '${forecastLocation.region}, ${forecastLocation.country}',
                     style: const TextStyle(color: Colors.white),
                     textAlign: TextAlign.center,
                   ),

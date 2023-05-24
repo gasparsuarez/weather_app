@@ -25,6 +25,8 @@ class _HomeView extends StatelessWidget {
         SizedBox(height: 20),
         CurrentWeather(),
         SizedBox(height: 20),
+        ForecastInfo(),
+        SizedBox(height: 20),
       ],
     );
   }
