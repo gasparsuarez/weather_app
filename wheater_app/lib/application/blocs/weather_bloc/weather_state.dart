@@ -1,13 +1,11 @@
 part of 'weather_bloc.dart';
 
-@immutable
 class WeatherState {}
 
 class LoadingWeatherState extends WeatherState {}
 
 class LoadedWeatherState extends WeatherState with EquatableMixin {
   final ForecastEntity forecastEntity;
-
   LoadedWeatherState({required this.forecastEntity});
 
   LoadedWeatherState copyWith({ForecastEntity? forecastEntity}) =>

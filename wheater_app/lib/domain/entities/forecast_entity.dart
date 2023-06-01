@@ -16,15 +16,7 @@ class ForecastEntity extends Equatable {
         current: Current.fromJson(json["current"]),
         forecast: Forecast.fromJson(json["forecast"]),
       );
-
-  Map<String, dynamic> toJson() => {
-        "location": location.toJson(),
-        "current": current.toJson(),
-        "forecast": forecast.toJson(),
-      };
-
   @override
-  // TODO: implement props
   List<Object?> get props => [location, current, forecast];
 }
 
@@ -104,32 +96,6 @@ class Current {
         gustMph: json["gust_mph"]?.toDouble(),
         gustKph: json["gust_kph"]?.toDouble(),
       );
-
-  Map<String, dynamic> toJson() => {
-        "last_updated_epoch": lastUpdatedEpoch,
-        "last_updated": lastUpdated,
-        "temp_c": tempC,
-        "temp_f": tempF,
-        "is_day": isDay,
-        "condition": condition.toJson(),
-        "wind_mph": windMph,
-        "wind_kph": windKph,
-        "wind_degree": windDegree,
-        "wind_dir": windDir,
-        "pressure_mb": pressureMb,
-        "pressure_in": pressureIn,
-        "precip_mm": precipMm,
-        "precip_in": precipIn,
-        "humidity": humidity,
-        "cloud": cloud,
-        "feelslike_c": feelslikeC,
-        "feelslike_f": feelslikeF,
-        "vis_km": visKm,
-        "vis_miles": visMiles,
-        "uv": uv,
-        "gust_mph": gustMph,
-        "gust_kph": gustKph,
-      };
 }
 
 class Condition {
@@ -148,12 +114,6 @@ class Condition {
         icon: json["icon"],
         code: json["code"],
       );
-
-  Map<String, dynamic> toJson() => {
-        "text": text,
-        "icon": icon,
-        "code": code,
-      };
 }
 
 class Forecast {
@@ -164,13 +124,10 @@ class Forecast {
   });
 
   factory Forecast.fromJson(Map<String, dynamic> json) => Forecast(
-        forecastday:
-            List<Forecastday>.from(json["forecastday"].map((x) => Forecastday.fromJson(x))),
+      forecastday: List<Forecastday>.from(json["forecastday"].map((x) => Forecastday.fromJson(x)))
+      //..removeAt(0)
+      //..toList()
       );
-
-  Map<String, dynamic> toJson() => {
-        "forecastday": List<dynamic>.from(forecastday.map((x) => x.toJson())),
-      };
 }
 
 class Forecastday {
@@ -195,15 +152,6 @@ class Forecastday {
         astro: Astro.fromJson(json["astro"]),
         hour: List<Hour>.from(json["hour"].map((x) => Hour.fromJson(x))),
       );
-
-  Map<String, dynamic> toJson() => {
-        "date":
-            "${date.year.toString().padLeft(4, '0')}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}",
-        "date_epoch": dateEpoch,
-        "day": day.toJson(),
-        "astro": astro.toJson(),
-        "hour": List<dynamic>.from(hour.map((x) => x.toJson())),
-      };
 }
 
 class Astro {
@@ -237,17 +185,6 @@ class Astro {
         isMoonUp: json["is_moon_up"],
         isSunUp: json["is_sun_up"],
       );
-
-  Map<String, dynamic> toJson() => {
-        "sunrise": sunrise,
-        "sunset": sunset,
-        "moonrise": moonrise,
-        "moonset": moonset,
-        "moon_phase": moonPhase,
-        "moon_illumination": moonIllumination,
-        "is_moon_up": isMoonUp,
-        "is_sun_up": isSunUp,
-      };
 }
 
 class Day {
@@ -317,29 +254,6 @@ class Day {
         condition: Condition.fromJson(json["condition"]),
         uv: json["uv"],
       );
-
-  Map<String, dynamic> toJson() => {
-        "maxtemp_c": maxtempC,
-        "maxtemp_f": maxtempF,
-        "mintemp_c": mintempC,
-        "mintemp_f": mintempF,
-        "avgtemp_c": avgtempC,
-        "avgtemp_f": avgtempF,
-        "maxwind_mph": maxwindMph,
-        "maxwind_kph": maxwindKph,
-        "totalprecip_mm": totalprecipMm,
-        "totalprecip_in": totalprecipIn,
-        "totalsnow_cm": totalsnowCm,
-        "avgvis_km": avgvisKm,
-        "avgvis_miles": avgvisMiles,
-        "avghumidity": avghumidity,
-        "daily_will_it_rain": dailyWillItRain,
-        "daily_chance_of_rain": dailyChanceOfRain,
-        "daily_will_it_snow": dailyWillItSnow,
-        "daily_chance_of_snow": dailyChanceOfSnow,
-        "condition": condition.toJson(),
-        "uv": uv,
-      };
 }
 
 class Hour {
@@ -448,42 +362,6 @@ class Hour {
         gustKph: json["gust_kph"]?.toDouble(),
         uv: json["uv"],
       );
-
-  Map<String, dynamic> toJson() => {
-        "time_epoch": timeEpoch,
-        "time": time,
-        "temp_c": tempC,
-        "temp_f": tempF,
-        "is_day": isDay,
-        "condition": condition.toJson(),
-        "wind_mph": windMph,
-        "wind_kph": windKph,
-        "wind_degree": windDegree,
-        "wind_dir": windDir,
-        "pressure_mb": pressureMb,
-        "pressure_in": pressureIn,
-        "precip_mm": precipMm,
-        "precip_in": precipIn,
-        "humidity": humidity,
-        "cloud": cloud,
-        "feelslike_c": feelslikeC,
-        "feelslike_f": feelslikeF,
-        "windchill_c": windchillC,
-        "windchill_f": windchillF,
-        "heatindex_c": heatindexC,
-        "heatindex_f": heatindexF,
-        "dewpoint_c": dewpointC,
-        "dewpoint_f": dewpointF,
-        "will_it_rain": willItRain,
-        "chance_of_rain": chanceOfRain,
-        "will_it_snow": willItSnow,
-        "chance_of_snow": chanceOfSnow,
-        "vis_km": visKm,
-        "vis_miles": visMiles,
-        "gust_mph": gustMph,
-        "gust_kph": gustKph,
-        "uv": uv,
-      };
 }
 
 class Location {
@@ -517,15 +395,4 @@ class Location {
         localtimeEpoch: json["localtime_epoch"],
         localtime: json["localtime"],
       );
-
-  Map<String, dynamic> toJson() => {
-        "name": name,
-        "region": region,
-        "country": country,
-        "lat": lat,
-        "lon": lon,
-        "tz_id": tzId,
-        "localtime_epoch": localtimeEpoch,
-        "localtime": localtime,
-      };
 }

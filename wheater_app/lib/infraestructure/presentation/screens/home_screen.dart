@@ -1,33 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:wheater_app/infraestructure/presentation/common/widgets/widgets.dart';
+import 'package:wheater_app/infraestructure/presentation/common/widgets/custom_nav_bar.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final Widget childView;
+  const HomeScreen({super.key, required this.childView});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: _HomeView(),
-    );
-  }
-}
-
-class _HomeView extends StatelessWidget {
-  const _HomeView();
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        CustomAppBar(),
-        SizedBox(height: 20),
-        LocationInfoWidget(),
-        SizedBox(height: 20),
-        CurrentWeather(),
-        SizedBox(height: 20),
-        ForecastInfo(),
-        SizedBox(height: 20),
-      ],
+    return Scaffold(
+      body: childView,
+      bottomNavigationBar: const CustomNavBar(),
     );
   }
 }
