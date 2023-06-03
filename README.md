@@ -10,7 +10,7 @@
 
     * Arquitectura Hexagonal.
     * Patrón BLoC y Flutter BLoC como gestor de estados.
-    * Injección de dependencias.
+    * Inyección de dependencias.
     * Go_Router para manejo de rutas.
     * Programación funcional.
 
