@@ -9,9 +9,9 @@
 ## Estructura 
 
     * Arquitectura Hexagonal.
-    * Patrón BLoC y Flutter BLoC como gestor de estados.
+    * Patrón BLoC y Flutter BLoC.
     * Inyección de dependencias.
-    * Go_Router para manejo de rutas.
+    * Go_Router.
     * Programación funcional.
 
 
