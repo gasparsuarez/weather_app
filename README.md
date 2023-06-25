@@ -1,24 +1,19 @@
-## Weather Application
+### Aplicación del Clima
+ * Detalle del pronóstico actual de una ubicación especificada por el usuario.
+ * La información se obtiene mediante el consumo de una API (Weather API).
+ * Funcionalidad de búsqueda con autocompletado.
+ * Sección de búsquedas recientes.
+ * Convertidor a Fahrenheit.
+   
+### Estructura
+ * Arquitectura Hexagonal.
+ * Patrón BLoC y Flutter BLoC.
+ * Inyección de dependencias.
+ * Go_Router para el enrutamiento.
+ * Programación funcional.
 
-    * Detalle del pronóstico actual de una localidad que especifica el usuario.
-    * La información se obtiene a través del consumo de una Api ( Weather Api ).
-    * Buscador con Auto-completado.
-    * Sección de recientes.
-    * Convertidor a Fahrenheit.
-    
-## Estructura 
-
-    * Arquitectura Hexagonal.
-    * Patrón BLoC y Flutter BLoC.
-    * Inyección de dependencias.
-    * Go_Router.
-    * Programación funcional.
-
-
-## Información de la API
-
-    * Weather API ( www.weatherapi.com )(Free API)
-    
+### Información de la API
+Weather API (www.weatherapi.com) (API gratuita)    
     
 <img src="https://github.com/gasparsuarez/wheater_app/assets/22453545/0e42b0f8-a7c3-4718-8c79-16ddb6da13e4" width="250">
 ##
